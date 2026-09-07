@@ -195,7 +195,7 @@
             color: var(--accent-gold);
         }
 
-        /* DIE BARBIERE */
+        /* DIE BARBIERE & REVIEWS GRID */
         .team-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -320,12 +320,45 @@
             box-shadow: 0 0 20px var(--gold-glow);
         }
 
+        /* FLOATING MOBILE BOOKING BUTTON */
+        .floating-book-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
+            color: #000;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-decoration: none;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* FOOTER & LEGAL LINKS */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
             background: #050505;
             color: var(--text-muted);
             font-size: 0.75rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent-gold);
         }
 
         @media (max-width: 768px) {
@@ -349,6 +382,7 @@
         <a href="index.html" onclick="toggleMenu()">Start / Home</a>
         <a href="#services" onclick="toggleMenu()">Services & Preise</a>
         <a href="#team" onclick="toggleMenu()">Die Barbiere</a>
+        <a href="#reviews" onclick="toggleMenu()">Bewertungen</a>
         <a href="#gallery" onclick="toggleMenu()">Galerie</a>
         <a href="#contact" onclick="toggleMenu()">Laden & Zeiten</a>
         <a href="news.html">News</a>
@@ -405,6 +439,23 @@
         </div>
     </section>
 
+    <!-- BEWERTUNGEN / REVIEWS -->
+    <section id="reviews">
+        <h2 class="section-title">Bewertungen</h2>
+        <div class="team-grid">
+            <div class="team-card" style="text-align: left;">
+                <p style="color: var(--accent-gold); font-size: 1rem; margin-bottom: 5px;">★★★★★</p>
+                <p style="color: #fff; font-size: 0.85rem; font-style: italic;">"Bester Fade in der Stadt! Rrustem und Qendrim wissen genau, was sie tun."</p>
+                <span style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 10px;">– Alex M.</span>
+            </div>
+            <div class="team-card" style="text-align: left;">
+                <p style="color: var(--accent-gold); font-size: 1rem; margin-bottom: 5px;">★★★★★</p>
+                <p style="color: #fff; font-size: 0.85rem; font-style: italic;">"Perfekter Service, saubere Konturen und immer gute Stimmung im Laden."</p>
+                <span style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 10px;">– Denis K.</span>
+            </div>
+        </div>
+    </section>
+
     <!-- GALERIE -->
     <section id="gallery">
         <h2 class="section-title">Galerie</h2>
@@ -454,8 +505,18 @@
         <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-upgrade">Jetzt Termin Buchen</a>
     </div>
 
+    <!-- FLOATING MOBILE BUTTON -->
+    <a href="https://friseur-rrustem.setmore.com" target="_blank" class="floating-book-btn">
+        ✂️ TERMIN BUCHEN
+    </a>
+
+    <!-- FOOTER & LEGAL LINKS -->
     <footer>
         <p>&copy; 2026 Friseur Rrustem | Barbershop</p>
+        <p style="margin-top: 10px;">
+            <a href="impressum.html">Impressum</a> | 
+            <a href="datenschutz.html">Datenschutz</a>
+        </p>
     </footer>
 
     <script>
