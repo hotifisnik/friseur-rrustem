@@ -13,6 +13,7 @@
             --gold-glow: rgba(212, 175, 55, 0.3);
             --text-main: #ffffff;
             --text-muted: #a0a0a0;
+            --border-light: rgba(255, 255, 255, 0.08);
         }
 
         * {
@@ -92,7 +93,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 25px;
+            gap: 22px;
             transition: right 0.4s ease-in-out;
             z-index: 150;
         }
@@ -103,7 +104,7 @@
 
         .nav-overlay a {
             color: var(--text-main);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
@@ -117,7 +118,7 @@
 
         /* HERO */
         .hero {
-            height: 75vh;
+            height: 70vh;
             background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,1) 100%), 
                         url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80') center/cover;
             display: flex;
@@ -148,9 +149,9 @@
         .btn-gold {
             background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
             color: #000;
-            padding: 16px 28px;
+            padding: 14px 28px;
             font-weight: 800;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 2px;
             border-radius: 50px;
             border: none;
@@ -158,6 +159,22 @@
             display: inline-block;
             text-transform: uppercase;
             text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-select {
+            background-color: var(--accent-gold);
+            color: #000;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-select:hover {
+            background-color: #fcf6ba;
         }
 
         /* SECTIONS */
@@ -176,36 +193,49 @@
             letter-spacing: 2px;
         }
 
-        /* SERVICES */
-        .services-grid {
-            display: grid;
-            gap: 15px;
+        /* BOOKING / SERVICES LIST STYLE (PLANITY LOOK) */
+        .booking-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .service-card {
+        .booking-card {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 18px;
+            border: 1px solid var(--border-light);
             border-radius: 12px;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-left: 3px solid var(--accent-gold);
+            transition: border-color 0.3s ease;
         }
 
-        .service-card h3 {
+        .booking-card:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .booking-info h3 {
             font-size: 1rem;
+            color: #fff;
+            margin-bottom: 4px;
         }
 
-        .service-card p {
-            font-size: 0.8rem;
+        .booking-meta {
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
 
-        .price {
-            font-size: 1.2rem;
+        .booking-action {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .booking-price {
             font-weight: 700;
-            color: var(--accent-gold);
+            font-size: 1.1rem;
+            color: #fff;
         }
 
         /* BARBIERE */
@@ -236,7 +266,7 @@
         }
 
         .gallery-item {
-            height: 300px;
+            height: 250px;
             background-color: var(--bg-card);
             border-radius: 12px;
             overflow: hidden;
@@ -254,43 +284,117 @@
             transform: scale(1.05);
         }
 
-        /* INFO & KONTAKT GRID */
-        .info-grid {
+        /* NEWS SECTION */
+        .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
-        .info-box {
+        .news-card {
             background: var(--bg-card);
+            border: 1px solid var(--border-light);
             border-radius: 12px;
-            padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .info-box h3 {
-            color: var(--accent-gold);
-            margin-bottom: 15px;
+        .news-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .news-img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .news-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .news-title {
             font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 8px;
+            line-height: 1.3;
         }
 
-        .info-row {
+        .news-date {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+        }
+
+        .news-text {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        /* ANFAHRT & MAPS SECTION (SALON RAIMONDA LOOK) */
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid var(--border-light);
+        }
+
+        .map-box {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .location-info h3 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .location-details p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .location-details strong {
+            color: #fff;
+        }
+
+        .hours-box {
+            margin-top: 15px;
+            margin-bottom: 25px;
+            background: #0a0a0a;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .hours-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 5px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #fff;
-            text-decoration: none;
-            margin-top: 10px;
-            font-size: 0.95rem;
+            font-size: 0.88rem;
+            margin-bottom: 5px;
         }
 
         footer {
@@ -300,6 +404,25 @@
             color: var(--text-muted);
             font-size: 0.8rem;
             border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .booking-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .booking-action {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+            .map-box {
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -320,44 +443,82 @@
 
     <!-- SLIDE-IN MENÜ -->
     <nav class="nav-overlay" id="navMenu">
+        <a href="#top" onclick="toggleMenu()">Start / Home</a>
         <a href="#services" onclick="toggleMenu()">Services & Preise</a>
         <a href="#team" onclick="toggleMenu()">Die Barbiere</a>
         <a href="#gallery" onclick="toggleMenu()">Galerie</a>
-        <a href="#info" onclick="toggleMenu()">Laden & Zeiten</a>
-        <a href="#booking" onclick="toggleMenu()" class="btn-gold" style="padding: 10px 20px; font-size: 0.9rem;">Termin Buchen</a>
+        <a href="#news" onclick="toggleMenu()">News & Aktionen</a>
+        <a href="#location" onclick="toggleMenu()">Laden & Anfahrt</a>
+        <a href="#booking" onclick="toggleMenu()" class="btn-gold" style="padding: 10px 20px; font-size: 0.85rem;">Termin Buchen</a>
     </nav>
 
     <!-- HERO SECTION -->
     <div class="hero">
         <h1>DEIN STYLE.<br>DEIN BARBER.</h1>
         <p>Präzisions-Haarschnitte & klassische Bartpflege bei Friseur Rrustem.</p>
-        <a href="#booking" class="btn-gold">Termin Buchen</a>
+        <a href="#booking" class="btn-gold">Jetzt Termin Vereinbaren</a>
     </div>
 
-    <!-- SERVICES & PREISE -->
+    <!-- SERVICES & PREISE (PLANITY SCREENSHOT STYLE) -->
     <section id="services">
-        <h2 class="section-title">Services & Preise</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div>
-                    <h3>Haarschnitt / Fade</h3>
-                    <p>Inklusive Beratung & Styling</p>
+        <h2 class="section-title">Aktionen & Angebote</h2>
+        <div class="booking-list">
+            <div class="booking-card">
+                <div class="booking-info">
+                    <h3>Pony schneiden / Konturen</h3>
+                    <span class="booking-meta">10 Min.</span>
                 </div>
-                <div class="price">25 €</div>
+                <div class="booking-action">
+                    <span class="booking-price">12 €</span>
+                    <a href="#booking" class="btn-select">Auswählen</a>
+                </div>
             </div>
-            <div class="service-card">
-                <div>
-                    <h3>Bart Style & Konturen</h3>
-                    <p>Rasur, Form & Pflege</p>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 40px;">Herren & Barbershop</h2>
+        <div class="booking-list">
+            <div class="booking-card">
+                <div class="booking-info">
+                    <h3>Klassischer Haarschnitt / Trockenschnitt</h3>
+                    <span class="booking-meta">30 Min.</span>
                 </div>
-                <div class="price">18 €</div>
+                <div class="booking-action">
+                    <span class="booking-price">25 €</span>
+                    <a href="#booking" class="btn-select">Auswählen</a>
+                </div>
             </div>
-            <div class="service-card">
-                <div>
-                    <h3>Komplettpaket</h3>
-                    <p>Haare + Bart + Hot Towel</p>
+
+            <div class="booking-card">
+                <div class="booking-info">
+                    <h3>Waschen + Schneiden + Fade</h3>
+                    <span class="booking-meta">35 Min.</span>
                 </div>
-                <div class="price">40 €</div>
+                <div class="booking-action">
+                    <span class="booking-price">28 €</span>
+                    <a href="#booking" class="btn-select">Auswählen</a>
+                </div>
+            </div>
+
+            <div class="booking-card">
+                <div class="booking-info">
+                    <h3>Bart Rasur & Pflege (Hot Towel)</h3>
+                    <span class="booking-meta">20 Min.</span>
+                </div>
+                <div class="booking-action">
+                    <span class="booking-price">18 €</span>
+                    <a href="#booking" class="btn-select">Auswählen</a>
+                </div>
+            </div>
+
+            <div class="booking-card">
+                <div class="booking-info">
+                    <h3>VIP Komplettpaket (Haare + Bart)</h3>
+                    <span class="booking-meta">50 Min.</span>
+                </div>
+                <div class="booking-action">
+                    <span class="booking-price">40 €</span>
+                    <a href="#booking" class="btn-select">Auswählen</a>
+                </div>
             </div>
         </div>
     </section>
@@ -393,49 +554,86 @@
         </div>
     </section>
 
-    <!-- LADEN & ZEITEN -->
-    <section id="info">
-        <h2 class="section-title">Laden & Zeiten</h2>
-        <div class="info-grid">
+    <!-- NEWS SECTION -->
+    <section id="news">
+        <h2 class="section-title">News</h2>
+        <div class="news-grid">
             
-            <div class="info-box">
-                <h3>🕐 Öffnungszeiten</h3>
-                <div class="info-row">
-                    <span>Mo - Fr:</span>
-                    <span>09:00 - 19:00 Uhr</span>
-                </div>
-                <div class="info-row">
-                    <span>Samstag:</span>
-                    <span>08:30 - 18:00 Uhr</span>
-                </div>
-                <div class="info-row" style="border: none;">
-                    <span>Sonntag:</span>
-                    <span style="color: #e74c3c;">Geschlossen</span>
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=600&q=80" class="news-img" alt="Neueröffnung">
+                <div class="news-body">
+                    <h3 class="news-title">Einladung Salon-Eröffnung am 01.06.2026 ab 12.00 Uhr</h3>
+                    <span class="news-date">19. Mai 2026</span>
+                    <p class="news-text">Willkommen bei Friseur Rrustem – dem neuen Hotspot für stilvolle Haarkunst & Cuts! Wir öffnen unsere Türen und laden euch herzlich ein...</p>
+                    <a href="#booking" class="btn-select" style="text-align: center;">Mehr lesen</a>
                 </div>
             </div>
 
-            <div class="info-box">
-                <h3>📍 Standort & Kontakt</h3>
-                <p style="font-size: 0.9rem; margin-bottom: 10px;">
-                    Musterstraße 12<br>
-                    12345 Musterstadt
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" class="news-img" alt="Umbau">
+                <div class="news-body">
+                    <h3 class="news-title">Wir bauen um & modernisieren für euch!</h3>
+                    <span class="news-date">18. April 2026</span>
+                    <p class="news-text">Wir sind mit Begeisterung dabei, unseren neuen Laden für euch umzubauen, damit ihr euch rundum wohlfühlen könnt...</p>
+                    <a href="#booking" class="btn-select" style="text-align: center;">Mehr lesen</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LADEN & ANFAHRT / GOOGLE MAPS (SALON RAIMONDA LOOK) -->
+    <section id="location">
+        <h2 class="section-title">Wo kannst du uns finden?</h2>
+        <div class="location-container">
+            
+            <!-- GOOGLE MAPS IFRAME -->
+            <div class="map-box">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.743128912!2d8.5681!3d50.3041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDE4JzE0LjgiTiA4wrAzNCcwNS4yIkU!5e0!3m2!1sde!2sde!4v1620000000000!5m2!1sde!2sde" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- KONTAKT & ZEITEN -->
+            <div class="location-info">
+                <h3>Friseur Rrustem</h3>
+                <div class="location-details">
+                    <p>Musterstraße 13A<br>12345 Musterstadt</p>
+                    <p style="margin-top: 15px;"><strong>Tel:</strong> 01234 - 56 78 90</p>
+                    <p><strong>Mobil:</strong> 0178 - 100 200 30</p>
+                </div>
+
+                <div class="hours-box">
+                    <div class="hours-row">
+                        <span>Montag - Freitag:</span>
+                        <span>09:00 - 19:00 Uhr</span>
+                    </div>
+                    <div class="hours-row">
+                        <span>Samstag:</span>
+                        <span>08:30 - 18:00 Uhr</span>
+                    </div>
+                    <div class="hours-row" style="color: #e74c3c;">
+                        <span>Sonntag:</span>
+                        <span>Geschlossen</span>
+                    </div>
+                </div>
+
+                <p style="font-weight: 700; font-size: 0.9rem; margin-bottom: 12px; text-transform: uppercase; color: var(--accent-gold);">
+                    Oder vereinbare unkompliziert einen Termin
                 </p>
-                <p style="font-size: 0.9rem;">📞 Tel: +49 123 456789</p>
-                
-                <a href="https://instagram.com" target="_blank" class="social-link">
-                    📸 Instagram: <strong>@friseur_rrustem</strong>
-                </a>
+                <a href="#booking" class="btn-gold" style="width: 100%; text-align: center;">JETZT TERMIN VEREINBAREN</a>
             </div>
 
         </div>
     </section>
 
     <!-- TERMIN BUCHEN CTA -->
-    <section id="booking" style="text-align: center; padding-bottom: 100px;">
+    <section id="booking" style="text-align: center; padding-bottom: 80px;">
         <h2 class="section-title">Bereit für ein Upgrade?</h2>
-        <p style="color: var(--text-muted); margin-bottom: 20px;">Sichere dir jetzt deinen Termin direkt online.</p>
-        <!-- HIER KOMMT DANN EURER SETMORE LINK REIN -->
-        <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-gold" style="width: 100%; text-align: center;">Jetzt Termin Buchen</a>
+        <p style="color: var(--text-muted); margin-bottom: 25px;">Sichere dir jetzt deinen Wunschtermin direkt online.</p>
+        <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-gold" style="width: 100%; max-width: 400px; text-align: center;">Termin Online Buchen</a>
     </section>
 
     <footer>
