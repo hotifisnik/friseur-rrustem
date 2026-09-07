@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wo du uns findest | Friseur Rrustem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-black: #0a0a0a; --bg-card: #141414; --accent-gold: #d4af37; --text-main: #ffffff; --text-muted: #a0a0a0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-black); color: var(--text-main); font-family: 'Poppins', sans-serif; }
+        h1, h2, h3, .logo { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background-color: #0a0a0a; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .logo { font-size: 1.2rem; font-weight: 900; color: var(--accent-gold); text-decoration: none; }
+        .hamburger { display: flex; flex-direction: column; justify-content: space-between; width: 30px; height: 21px; cursor: pointer; }
+        .hamburger span { display: block; height: 3px; width: 100%; background-color: var(--accent-gold); border-radius: 3px; }
+
+        .nav-overlay { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background-color: rgba(10, 10, 10, 0.98); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 25px; transition: right 0.4s ease-in-out; z-index: 150; }
+        .nav-overlay.active { right: 0; }
+        .nav-overlay a { color: var(--text-main); font-size: 1.2rem; font-weight: 700; text-decoration: none; text-transform: uppercase; }
+
+        section { padding: 50px 20px; max-width: 1000px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 1.8rem; color: var(--accent-gold); margin-bottom: 30px; }
+
+        .location-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; background: var(--bg-card); border-radius: 16px; padding: 25px; border: 1px solid rgba(255,255,255,0.08); }
+        .map-box { width: 100%; height: 100%; min-height: 320px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(212, 175, 55, 0.2); }
+        .map-box iframe { width: 100%; height: 100%; border: 0; }
+
+        .location-info h3 { font-size: 1.4rem; color: #fff; margin-bottom: 15px; }
+        .hours-box { margin: 20px 0; background: #0a0a0a; padding: 15px; border-radius: 8px; border-left: 3px solid var(--accent-gold); }
+        .hours-row { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 5px; }
+
+        .btn-gold { background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7); color: #000; padding: 14px 28px; font-weight: 800; font-size: 0.85rem; border-radius: 50px; text-transform: uppercase; text-decoration: none; display: inline-block; width: 100%; text-align: center; }
+
+        @media (max-width: 768px) {
+            .location-container { grid-template-columns: 1fr; }
+            .map-box { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Friseur Rrustem</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <nav class="nav-overlay" id="navMenu">
+        <a href="index.html">Start / Home</a>
+        <a href="news.html">News & Aktionen</a>
+        <a href="anfahrt.html">Wo du uns findest</a>
+        <a href="https://friseur-rrustem.setmore.com" target="_blank" style="color: var(--accent-gold);">Termin Buchen</a>
+    </nav>
+
+    <section>
+        <h1 class="section-title">WO KANNST DU UNS FINDEN?</h1>
+        <div class="location-container">
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2556.743128912!2d8.5681!3d50.3041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDE4JzE0LjgiTiA4wrAzNCcwNS4yIkU!5e0!3m2!1sde!2sde!4v1620000000000!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="location-info">
+                <h3>Friseur Rrustem</h3>
+                <p style="color: #a0a0a0;">Musterstraße 13A<br>12345 Musterstadt</p>
+                <p style="color: #a0a0a0; margin-top: 10px;"><strong>Tel:</strong> 01234 - 56 78 90</p>
+
+                <div class="hours-box">
+                    <div class="hours-row"><span>Mo - Fr:</span><span>09:00 - 19:00 Uhr</span></div>
+                    <div class="hours-row"><span>Samstag:</span><span>08:30 - 18:00 Uhr</span></div>
+                    <div class="hours-row" style="color: #e74c3c;"><span>Sonntag:</span><span>Geschlossen</span></div>
+                </div>
+
+                <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-gold">JETZT TERMIN VEREINBAREN</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+    </script>
+</body>
+</html>
