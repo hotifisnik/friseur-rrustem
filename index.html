@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friseur Rrustem | Premium Barbershop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-black: #0a0a0a;
+            --bg-card: #141414;
+            --accent-gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.3);
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+        }
+
+        /* HERO */
+        .hero {
+            height: 75vh;
+            background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,1) 100%), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #fff, var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        /* BUTTONS */
+        .btn-gold {
+            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
+            color: #000;
+            padding: 16px 28px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 0 15px var(--gold-glow);
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 18px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+        }
+
+        .service-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        /* BARBIERE */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .team-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .team-card h3 {
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+        }
+
+        /* INFO & KONTAKT GRID */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-box h3 {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 5px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #050505;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Friseur Rrustem</div>
+        <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-gold" style="padding: 8px 16px; font-size: 0.7rem;">Termin</a>
+    </header>
+
+    <div class="hero">
+        <h1>DEIN STYLE.<br>DEIN BARBER.</h1>
+        <p>Präzisions-Haarschnitte & klassische Bartpflege bei Friseur Rrustem.</p>
+        <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-gold">Termin Buchen</a>
+    </div>
+
+    <section id="services">
+        <h2 class="section-title">Services & Preise</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div>
+                    <h3>Haarschnitt / Fade</h3>
+                    <p>Inklusive Beratung & Styling</p>
+                </div>
+                <div class="price">25 €</div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <h3>Bart Style & Konturen</h3>
+                    <p>Rasur, Form & Pflege</p>
+                </div>
+                <div class="price">18 €</div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <h3>Komplettpaket</h3>
+                    <p>Haare + Bart + Hot Towel</p>
+                </div>
+                <div class="price">40 €</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <h2 class="section-title">Die Barbiere</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <h3>[Onkel 1]</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Master Barber & Fade Specialist</p>
+            </div>
+            <div class="team-card">
+                <h3>[Onkel 2]</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Beard Expert & Styling Pro</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="info">
+        <h2 class="section-title">Laden & Zeiten</h2>
+        <div class="info-grid">
+            
+            <div class="info-box">
+                <h3>🕐 Öffnungszeiten</h3>
+                <div class="info-row">
+                    <span>Mo - Fr:</span>
+                    <span>09:00 - 19:00 Uhr</span>
+                </div>
+                <div class="info-row">
+                    <span>Samstag:</span>
+                    <span>08:30 - 18:00 Uhr</span>
+                </div>
+                <div class="info-row" style="border: none;">
+                    <span>Sonntag:</span>
+                    <span style="color: #e74c3c;">Geschlossen</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>📍 Standort & Kontakt</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">
+                    Musterstraße 12<br>
+                    12345 Musterstadt
+                </p>
+                <p style="font-size: 0.9rem;">📞 Tel: +49 123 456789</p>
+                
+                <a href="https://instagram.com" target="_blank" class="social-link">
+                    📸 Instagram: <strong>@friseur_rrustem</strong>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="booking" style="text-align: center; padding-bottom: 100px;">
+        <h2 class="section-title">Bereit für ein Upgrade?</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Sichere dir jetzt deinen Termin direkt online.</p>
+        <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-gold" style="width: 100%; text-align: center;">Jetzt Termin Buchen</a>
+    </section>
+
+    <footer>
+        <p>© 2026 Friseur Rrustem | Barbershop</p>
+    </footer>
+
+</body>
+</html>
