@@ -10,9 +10,10 @@
             --bg-black: #0a0a0a;
             --bg-card: #141414;
             --accent-gold: #d4af37;
-            --gold-glow: rgba(212, 175, 55, 0.3);
+            --gold-glow: rgba(212, 175, 55, 0.4);
             --text-main: #ffffff;
             --text-muted: #a0a0a0;
+            --border-light: rgba(255, 255, 255, 0.08);
         }
 
         * {
@@ -37,50 +38,43 @@
             text-transform: uppercase;
         }
 
-        /* HEADER & NAVIGATION */
+        /* HEADER */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 20px 30px;
             background-color: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .logo {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 900;
             letter-spacing: 2px;
             color: var(--accent-gold);
             text-decoration: none;
-            cursor: pointer;
         }
 
-        /* 3-LINIEN MENU (HAMBURGER) */
         .hamburger {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 30px;
-            height: 21px;
+            width: 25px;
+            height: 18px;
             cursor: pointer;
             z-index: 200;
         }
 
         .hamburger span {
             display: block;
-            height: 3px;
+            height: 2px;
             width: 100%;
             background-color: var(--accent-gold);
-            border-radius: 3px;
-            transition: all 0.3s ease;
         }
 
-        /* OVERLAY MENU */
         .nav-overlay {
             position: fixed;
             top: 0;
@@ -103,23 +97,18 @@
 
         .nav-overlay a {
             color: var(--text-main);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
-            transition: color 0.3s;
         }
 
-        .nav-overlay a:hover {
-            color: var(--accent-gold);
-        }
-
-        /* HERO */
+        /* HERO SECTION */
         .hero {
             height: 75vh;
-            background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,1) 100%), 
-                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80') center/cover;
+            background: linear-gradient(180deg, rgba(10,10,10,0.7) 0%, rgba(10,10,10,1) 100%), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -129,188 +118,226 @@
         }
 
         .hero h1 {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             font-weight: 900;
             letter-spacing: 2px;
             margin-bottom: 15px;
-            background: linear-gradient(45deg, #fff, var(--accent-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--accent-gold);
+            line-height: 1.3;
         }
 
         .hero p {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 25px;
         }
 
-        /* BUTTONS */
-        .btn-gold {
+        .btn-hero {
             background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
             color: #000;
-            padding: 16px 28px;
+            padding: 10px 24px;
             font-weight: 800;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
             border-radius: 50px;
-            border: none;
-            box-shadow: 0 0 15px var(--gold-glow);
-            display: inline-block;
             text-transform: uppercase;
             text-decoration: none;
         }
 
-        /* SECTIONS */
+        /* SECTIONS GENERAL */
         section {
-            padding: 60px 20px;
-            max-width: 1000px;
+            padding: 50px 20px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 900;
             color: var(--accent-gold);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             letter-spacing: 2px;
         }
 
-        /* SERVICES */
-        .services-grid {
-            display: grid;
+        /* SERVICES & PREISE */
+        .service-list {
+            display: flex;
+            flex-direction: column;
             gap: 15px;
         }
 
         .service-card {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 18px;
-            border-radius: 12px;
+            border-radius: 8px;
+            padding: 18px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-left: 3px solid var(--accent-gold);
         }
 
-        .service-card h3 {
-            font-size: 1rem;
+        .service-info h3 {
+            font-size: 0.95rem;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
         }
 
-        .service-card p {
+        .service-info p {
             font-size: 0.8rem;
             color: var(--text-muted);
         }
 
-        .price {
-            font-size: 1.2rem;
+        .service-price {
             font-weight: 700;
+            font-size: 1rem;
             color: var(--accent-gold);
         }
 
-        /* BARBIERE */
+        /* DIE BARBIERE */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         .team-card {
             background: var(--bg-card);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 8px;
+            padding: 25px 15px;
             text-align: center;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--border-light);
         }
 
         .team-card h3 {
             color: var(--accent-gold);
-            margin-bottom: 5px;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
         }
 
-        /* GALERIE SECTION */
+        .team-card p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* GALERIE */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
         }
 
         .gallery-item {
-            height: 300px;
-            background-color: var(--bg-card);
-            border-radius: 12px;
+            height: 200px;
+            border-radius: 8px;
             overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
         }
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
-        }
-
-        /* INFO & KONTAKT GRID */
+        /* LADEN & ZEITEN */
         .info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
-        .info-box {
+        .info-card {
             background: var(--bg-card);
             border-radius: 12px;
             padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-light);
         }
 
-        .info-box h3 {
+        .info-card h3 {
             color: var(--accent-gold);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
             font-size: 0.9rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 5px;
-        }
-
-        .social-link {
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: #fff;
+            gap: 8px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .hours-row.closed {
+            color: #e74c3c;
+        }
+
+        .contact-details p {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .contact-details span {
+            color: var(--text-muted);
+        }
+
+        /* BEREIT FÜR EIN UPGRADE */
+        .upgrade-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .upgrade-section h2 {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .upgrade-section p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+        }
+
+        .btn-upgrade {
+            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
+            color: #000;
+            padding: 16px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            text-transform: uppercase;
             text-decoration: none;
-            margin-top: 10px;
-            font-size: 0.95rem;
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px var(--gold-glow);
         }
 
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 20px;
             background: #050505;
             color: var(--text-muted);
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid, .team-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER / TOP NAV -->
-    <header id="top">
-        <!-- Logo bringt dich direkt zum Seitenanfang (#top) -->
-        <a href="#top" class="logo">Friseur Rrustem</a>
-
-        <!-- 3 Linien Button -->
+    <header>
+        <a href="index.html" class="logo">Friseur Rrustem</a>
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -318,61 +345,62 @@
         </div>
     </header>
 
-    <!-- SLIDE-IN MENÜ -->
     <nav class="nav-overlay" id="navMenu">
+        <a href="index.html" onclick="toggleMenu()">Start / Home</a>
         <a href="#services" onclick="toggleMenu()">Services & Preise</a>
         <a href="#team" onclick="toggleMenu()">Die Barbiere</a>
         <a href="#gallery" onclick="toggleMenu()">Galerie</a>
-        <a href="#info" onclick="toggleMenu()">Laden & Zeiten</a>
-        <a href="#booking" onclick="toggleMenu()" class="btn-gold" style="padding: 10px 20px; font-size: 0.9rem;">Termin Buchen</a>
+        <a href="#contact" onclick="toggleMenu()">Laden & Zeiten</a>
+        <a href="news.html">News</a>
+        <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-hero" style="margin-top: 10px;">Termin Buchen</a>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <div class="hero">
         <h1>DEIN STYLE.<br>DEIN BARBER.</h1>
         <p>Präzisions-Haarschnitte & klassische Bartpflege bei Friseur Rrustem.</p>
-        <a href="#booking" class="btn-gold">Termin Buchen</a>
+        <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-hero">Termin Buchen</a>
     </div>
 
     <!-- SERVICES & PREISE -->
     <section id="services">
         <h2 class="section-title">Services & Preise</h2>
-        <div class="services-grid">
+        <div class="service-list">
             <div class="service-card">
-                <div>
-                    <h3>Haarschnitt / Fade</h3>
+                <div class="service-info">
+                    <h3>HAARSCHNITT / FADE</h3>
                     <p>Inklusive Beratung & Styling</p>
                 </div>
-                <div class="price">25 €</div>
+                <div class="service-price">25 €</div>
             </div>
             <div class="service-card">
-                <div>
-                    <h3>Bart Style & Konturen</h3>
+                <div class="service-info">
+                    <h3>BART STYLE & KONTUREN</h3>
                     <p>Rasur, Form & Pflege</p>
                 </div>
-                <div class="price">18 €</div>
+                <div class="service-price">18 €</div>
             </div>
             <div class="service-card">
-                <div>
-                    <h3>Komplettpaket</h3>
+                <div class="service-info">
+                    <h3>KOMPLETTPAKET</h3>
                     <p>Haare + Bart + Hot Towel</p>
                 </div>
-                <div class="price">40 €</div>
+                <div class="service-price">40 €</div>
             </div>
         </div>
     </section>
 
-    <!-- BARBIERE -->
+    <!-- DIE BARBIERE -->
     <section id="team">
         <h2 class="section-title">Die Barbiere</h2>
         <div class="team-grid">
             <div class="team-card">
-                <h3>[Onkel 1]</h3>
-                <p style="font-size: 0.85rem; color: var(--text-muted);">Master Barber & Fade Specialist</p>
+                <h3>[ONKEL 1]</h3>
+                <p>Master Barber & Fade Specialist</p>
             </div>
             <div class="team-card">
-                <h3>[Onkel 2]</h3>
-                <p style="font-size: 0.85rem; color: var(--text-muted);">Beard Expert & Styling Pro</p>
+                <h3>[ONKEL 2]</h3>
+                <p>Beard Expert & Styling Pro</p>
             </div>
         </div>
     </section>
@@ -381,74 +409,59 @@
     <section id="gallery">
         <h2 class="section-title">Galerie</h2>
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Barber Cut 1">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="Barber Cut 2">
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=600&q=80" alt="Barber Cut 3">
-            </div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Cut 1"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="Cut 2"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=600&q=80" alt="Cut 3"></div>
         </div>
     </section>
 
     <!-- LADEN & ZEITEN -->
-    <section id="info">
+    <section id="contact">
         <h2 class="section-title">Laden & Zeiten</h2>
         <div class="info-grid">
-            
-            <div class="info-box">
-                <h3>🕐 Öffnungszeiten</h3>
-                <div class="info-row">
+            <div class="info-card">
+                <h3>⏰ ÖFFNUNGSZEITEN</h3>
+                <div class="hours-row">
                     <span>Mo - Fr:</span>
                     <span>09:00 - 19:00 Uhr</span>
                 </div>
-                <div class="info-row">
+                <div class="hours-row">
                     <span>Samstag:</span>
                     <span>08:30 - 18:00 Uhr</span>
                 </div>
-                <div class="info-row" style="border: none;">
+                <div class="hours-row closed">
                     <span>Sonntag:</span>
-                    <span style="color: #e74c3c;">Geschlossen</span>
+                    <span>Geschlossen</span>
                 </div>
             </div>
 
-            <div class="info-box">
-                <h3>📍 Standort & Kontakt</h3>
-                <p style="font-size: 0.9rem; margin-bottom: 10px;">
-                    Musterstraße 12<br>
-                    12345 Musterstadt
-                </p>
-                <p style="font-size: 0.9rem;">📞 Tel: +49 123 456789</p>
-                
-                <a href="https://instagram.com" target="_blank" class="social-link">
-                    📸 Instagram: <strong>@friseur_rrustem</strong>
-                </a>
+            <div class="info-card">
+                <h3>📍 STANDORT & KONTAKT</h3>
+                <div class="contact-details">
+                    <p>Musterstraße 12</p>
+                    <p>12345 Musterstadt</p>
+                    <p style="margin-top: 15px;">📞 <span>Tel:</span> +49 123 456789</p>
+                    <p>📷 <span>Instagram:</span> @friseur_rrustem</p>
+                </div>
             </div>
-
         </div>
     </section>
 
-    <!-- TERMIN BUCHEN CTA -->
-    <section id="booking" style="text-align: center; padding-bottom: 100px;">
-        <h2 class="section-title">Bereit für ein Upgrade?</h2>
-        <p style="color: var(--text-muted); margin-bottom: 20px;">Sichere dir jetzt deinen Termin direkt online.</p>
-        <!-- HIER KOMMT DANN EURER SETMORE LINK REIN -->
-        <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-gold" style="width: 100%; text-align: center;">Jetzt Termin Buchen</a>
-    </section>
+    <!-- BEREIT FÜR EIN UPGRADE -->
+    <div class="upgrade-section">
+        <h2>BEREIT FÜR EIN UPGRADE?</h2>
+        <p>Sichere dir jetzt deinen Termin direkt online.</p>
+        <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-upgrade">Jetzt Termin Buchen</a>
+    </div>
 
     <footer>
         <p>&copy; 2026 Friseur Rrustem | Barbershop</p>
     </footer>
 
-    <!-- JAVASCRIPT FÜR DIE DREI STRICHE MENÜ-FUNKTION -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
+            document.getElementById('navMenu').classList.toggle('active');
         }
     </script>
-
 </body>
 </html>
