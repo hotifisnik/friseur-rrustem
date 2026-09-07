@@ -1,137 +1,454 @@
-<!-- SERVICES & PREISE IM SCREENSHOT-STYLE -->
-<section id="services">
-    <h2 class="section-title">Aktionen & Angebote</h2>
-    <div class="booking-list">
-        <div class="booking-card">
-            <div class="booking-info">
-                <h3>Pony schneiden / Konturen</h3>
-                <span class="booking-meta">10 Min.</span>
-            </div>
-            <div class="booking-action">
-                <span class="booking-price">12 €</span>
-                <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-select">Auswählen</a>
-            </div>
-        </div>
-    </div>
-
-    <h2 class="section-title" style="margin-top: 40px;">Herren & Barbershop</h2>
-    <div class="booking-list">
-        <div class="booking-card">
-            <div class="booking-info">
-                <h3>Klassischer Haarschnitt / Trockenschnitt</h3>
-                <span class="booking-meta">30 Min.</span>
-            </div>
-            <div class="booking-action">
-                <span class="booking-price">25 €</span>
-                <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-select">Auswählen</a>
-            </div>
-        </div>
-
-        <div class="booking-card">
-            <div class="booking-info">
-                <h3>Waschen + Schneiden + Fade</h3>
-                <span class="booking-meta">35 Min.</span>
-            </div>
-            <div class="booking-action">
-                <span class="booking-price">28 €</span>
-                <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-select">Auswählen</a>
-            </div>
-        </div>
-
-        <div class="booking-card">
-            <div class="booking-info">
-                <h3>Bart Rasur & Pflege (Hot Towel)</h3>
-                <span class="booking-meta">20 Min.</span>
-            </div>
-            <div class="booking-action">
-                <span class="booking-price">18 €</span>
-                <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-select">Auswählen</a>
-            </div>
-        </div>
-
-        <div class="booking-card">
-            <div class="booking-info">
-                <h3>VIP Komplettpaket (Haare + Bart)</h3>
-                <span class="booking-meta">50 Min.</span>
-            </div>
-            <div class="booking-action">
-                <span class="booking-price">40 €</span>
-                <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-select">Auswählen</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ZUSÄTZLICHES CSS FÜR DIE CARDS (Füge das in deinen <style>-Bereich ein) -->
-<style>
-    .booking-list {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .booking-card {
-        background: #141414;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 12px;
-        padding: 16px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: border-color 0.3s ease;
-    }
-
-    .booking-card:hover {
-        border-color: #d4af37;
-    }
-
-    .booking-info h3 {
-        font-size: 1rem;
-        color: #fff;
-        margin-bottom: 4px;
-    }
-
-    .booking-meta {
-        font-size: 0.85rem;
-        color: #a0a0a0;
-    }
-
-    .booking-action {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .booking-price {
-        font-weight: 700;
-        font-size: 1.1rem;
-        color: #fff;
-    }
-
-    .btn-select {
-        background-color: #d4af37;
-        color: #000;
-        padding: 8px 18px;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 0.85rem;
-        text-decoration: none;
-        transition: background-color 0.2s ease;
-    }
-
-    .btn-select:hover {
-        background-color: #fcf6ba;
-    }
-
-    @media (max-width: 600px) {
-        .booking-card {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friseur Rrustem | Premium Barbershop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-black: #0a0a0a;
+            --bg-card: #141414;
+            --accent-gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.3);
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
         }
-        .booking-action {
-            width: 100%;
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            display: flex;
             justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-    }
-</style>
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 3-LINIEN MENU (HAMBURGER) */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 200;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--accent-gold);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* OVERLAY MENU */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(10, 10, 10, 0.98);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            transition: right 0.4s ease-in-out;
+            z-index: 150;
+        }
+
+        .nav-overlay.active {
+            right: 0;
+        }
+
+        .nav-overlay a {
+            color: var(--text-main);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .nav-overlay a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* HERO */
+        .hero {
+            height: 75vh;
+            background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,1) 100%), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #fff, var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        /* BUTTONS */
+        .btn-gold {
+            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
+            color: #000;
+            padding: 16px 28px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 0 15px var(--gold-glow);
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 18px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .service-card h3 {
+            font-size: 1rem;
+        }
+
+        .service-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        /* BARBIERE */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .team-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .team-card h3 {
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+        }
+
+        /* GALERIE SECTION */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* INFO & KONTAKT GRID */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-box h3 {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 5px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #050505;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / TOP NAV -->
+    <header id="top">
+        <!-- Logo bringt dich direkt zum Seitenanfang (#top) -->
+        <a href="#top" class="logo">Friseur Rrustem</a>
+
+        <!-- 3 Linien Button -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- SLIDE-IN MENÜ -->
+    <nav class="nav-overlay" id="navMenu">
+        <a href="#services" onclick="toggleMenu()">Services & Preise</a>
+        <a href="#team" onclick="toggleMenu()">Die Barbiere</a>
+        <a href="#gallery" onclick="toggleMenu()">Galerie</a>
+        <a href="#info" onclick="toggleMenu()">Laden & Zeiten</a>
+        <a href="#booking" onclick="toggleMenu()" class="btn-gold" style="padding: 10px 20px; font-size: 0.9rem;">Termin Buchen</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h1>DEIN STYLE.<br>DEIN BARBER.</h1>
+        <p>Präzisions-Haarschnitte & klassische Bartpflege bei Friseur Rrustem.</p>
+        <a href="#booking" class="btn-gold">Termin Buchen</a>
+    </div>
+
+    <!-- SERVICES & PREISE -->
+    <section id="services">
+        <h2 class="section-title">Services & Preise</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div>
+                    <h3>Haarschnitt / Fade</h3>
+                    <p>Inklusive Beratung & Styling</p>
+                </div>
+                <div class="price">25 €</div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <h3>Bart Style & Konturen</h3>
+                    <p>Rasur, Form & Pflege</p>
+                </div>
+                <div class="price">18 €</div>
+            </div>
+            <div class="service-card">
+                <div>
+                    <h3>Komplettpaket</h3>
+                    <p>Haare + Bart + Hot Towel</p>
+                </div>
+                <div class="price">40 €</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BARBIERE -->
+    <section id="team">
+        <h2 class="section-title">Die Barbiere</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <h3>[Onkel 1]</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Master Barber & Fade Specialist</p>
+            </div>
+            <div class="team-card">
+                <h3>[Onkel 2]</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Beard Expert & Styling Pro</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="gallery">
+        <h2 class="section-title">Galerie</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Barber Cut 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="Barber Cut 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=600&q=80" alt="Barber Cut 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- LADEN & ZEITEN -->
+    <section id="info">
+        <h2 class="section-title">Laden & Zeiten</h2>
+        <div class="info-grid">
+            
+            <div class="info-box">
+                <h3>🕐 Öffnungszeiten</h3>
+                <div class="info-row">
+                    <span>Mo - Fr:</span>
+                    <span>09:00 - 19:00 Uhr</span>
+                </div>
+                <div class="info-row">
+                    <span>Samstag:</span>
+                    <span>08:30 - 18:00 Uhr</span>
+                </div>
+                <div class="info-row" style="border: none;">
+                    <span>Sonntag:</span>
+                    <span style="color: #e74c3c;">Geschlossen</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>📍 Standort & Kontakt</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">
+                    Musterstraße 12<br>
+                    12345 Musterstadt
+                </p>
+                <p style="font-size: 0.9rem;">📞 Tel: +49 123 456789</p>
+                
+                <a href="https://instagram.com" target="_blank" class="social-link">
+                    📸 Instagram: <strong>@friseur_rrustem</strong>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TERMIN BUCHEN CTA -->
+    <section id="booking" style="text-align: center; padding-bottom: 100px;">
+        <h2 class="section-title">Bereit für ein Upgrade?</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Sichere dir jetzt deinen Termin direkt online.</p>
+        <!-- HIER KOMMT DANN EURER SETMORE LINK REIN -->
+        <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-gold" style="width: 100%; text-align: center;">Jetzt Termin Buchen</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Friseur Rrustem | Barbershop</p>
+    </footer>
+
+    <!-- JAVASCRIPT FÜR DIE DREI STRICHE MENÜ-FUNKTION -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
