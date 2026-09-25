@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friseur Rrustem | Premium Barbershop</title>
+    <title>Friseur Rustem | Damen & Herren | Wehrheim</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -33,29 +33,45 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, .logo {
+        h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
         }
 
-        /* HEADER */
+        /* HEADER & LOGO */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 30px;
+            padding: 15px 30px;
             background-color: rgba(10, 10, 10, 0.95);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
 
-        .logo {
-            font-size: 1.1rem;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
             font-weight: 900;
             letter-spacing: 2px;
             color: var(--accent-gold);
-            text-decoration: none;
         }
 
         .hamburger {
@@ -195,7 +211,7 @@
             color: var(--accent-gold);
         }
 
-        /* DIE BARBIERE & REVIEWS GRID */
+        /* TEAM & REVIEWS GRID */
         .team-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -370,7 +386,10 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo">Friseur Rrustem</a>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="Rustem Logo" class="logo-img">
+            <span class="logo-text">RUSTEM</span>
+        </a>
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -381,7 +400,7 @@
     <nav class="nav-overlay" id="navMenu">
         <a href="index.html" onclick="toggleMenu()">Start / Home</a>
         <a href="#services" onclick="toggleMenu()">Services & Preise</a>
-        <a href="#team" onclick="toggleMenu()">Die Barbiere</a>
+        <a href="#team" onclick="toggleMenu()">Das Team</a>
         <a href="#reviews" onclick="toggleMenu()">Bewertungen</a>
         <a href="#gallery" onclick="toggleMenu()">Galerie</a>
         <a href="#contact" onclick="toggleMenu()">Laden & Zeiten</a>
@@ -391,8 +410,8 @@
 
     <!-- HERO -->
     <div class="hero">
-        <h1>DEIN STYLE.<br>DEIN BARBER.</h1>
-        <p>Präzisions-Haarschnitte & klassische Bartpflege bei Friseur Rrustem.</p>
+        <h1>DEIN STYLE.<br>DEIN FRISEUR.</h1>
+        <p>Präzisions-Haarschnitte & Styling für Damen & Herren in Wehrheim.</p>
         <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-hero">Termin Buchen</a>
     </div>
 
@@ -424,17 +443,17 @@
         </div>
     </section>
 
-    <!-- DIE BARBIERE -->
+    <!-- DAS TEAM -->
     <section id="team">
-        <h2 class="section-title">Die Barbiere</h2>
+        <h2 class="section-title">Das Team</h2>
         <div class="team-grid">
             <div class="team-card">
                 <h3>RRUSTEM</h3>
-                <p>Master Barber</p>
+                <p>Master Barber & Stylist</p>
             </div>
             <div class="team-card">
                 <h3>QENDRIM</h3>
-                <p>Master Barber</p>
+                <p>Master Barber & Stylist</p>
             </div>
         </div>
     </section>
@@ -489,10 +508,10 @@
             <div class="info-card">
                 <h3>📍 STANDORT & KONTAKT</h3>
                 <div class="contact-details">
-                    <p>Musterstraße 12</p>
-                    <p>12345 Musterstadt</p>
+                    <p>Wiesenau 30</p>
+                    <p>61273 Wehrheim[cite: 4]</p>
                     <p style="margin-top: 15px;">📞 <span>Tel:</span> +49 123 456789</p>
-                    <p>📷 <span>Instagram:</span> @friseur_rrustem</p>
+                    <p>📷 <span>Instagram:</span> @friseur_rustem</p>
                 </div>
             </div>
         </div>
@@ -512,7 +531,7 @@
 
     <!-- FOOTER & LEGAL LINKS -->
     <footer>
-        <p>&copy; 2026 Friseur Rrustem | Barbershop</p>
+        <p>&copy; 2026 Friseur Rustem | Damen & Herren</p>
         <p style="margin-top: 10px;">
             <a href="impressum.html">Impressum</a> | 
             <a href="datenschutz.html">Datenschutz</a>
