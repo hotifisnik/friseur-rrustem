@@ -176,39 +176,22 @@
             letter-spacing: 2px;
         }
 
-        /* SERVICES & PREISE */
-        .service-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        /* PREISLISTE BILD STYLING */
+        .price-image-container {
+            text-align: center;
         }
 
-        .service-card {
-            background: var(--bg-card);
-            border-radius: 8px;
-            padding: 18px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-left: 3px solid var(--accent-gold);
+        .price-flyer-img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+            transition: transform 0.3s ease;
         }
 
-        .service-info h3 {
-            font-size: 0.95rem;
-            color: #fff;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-
-        .service-info p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .service-price {
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--accent-gold);
+        .price-flyer-img:hover {
+            transform: scale(1.02);
         }
 
         /* TEAM & REVIEWS GRID */
@@ -387,7 +370,7 @@
 
     <header>
         <a href="index.html" class="logo-container">
-            <img src="logo.JPG" alt="Rustem Logo" class="logo-img">
+            <img src="logo.jpg" alt="Rustem Logo" class="logo-img">
             <span class="logo-text">RUSTEM</span>
         </a>
         <div class="hamburger" onclick="toggleMenu()">
@@ -399,7 +382,7 @@
 
     <nav class="nav-overlay" id="navMenu">
         <a href="index.html" onclick="toggleMenu()">Start / Home</a>
-        <a href="#services" onclick="toggleMenu()">Services & Preise</a>
+        <a href="#services" onclick="toggleMenu()">Preisliste</a>
         <a href="#team" onclick="toggleMenu()">Das Team</a>
         <a href="#reviews" onclick="toggleMenu()">Bewertungen</a>
         <a href="#gallery" onclick="toggleMenu()">Galerie</a>
@@ -415,31 +398,14 @@
         <a href="https://friseur-rrustem.setmore.com" target="_blank" class="btn-hero">Termin Buchen</a>
     </div>
 
-    <!-- SERVICES & PREISE -->
+    <!-- PREISLISTE ALS BILD -->
     <section id="services">
-        <h2 class="section-title">Services & Preise</h2>
-        <div class="service-list">
-            <div class="service-card">
-                <div class="service-info">
-                    <h3>HAARSCHNITT / FADE</h3>
-                    <p>Inklusive Beratung & Styling</p>
-                </div>
-                <div class="service-price">25 €</div>
-            </div>
-            <div class="service-card">
-                <div class="service-info">
-                    <h3>BART STYLE & KONTUREN</h3>
-                    <p>Rasur, Form & Pflege</p>
-                </div>
-                <div class="service-price">18 €</div>
-            </div>
-            <div class="service-card">
-                <div class="service-info">
-                    <h3>KOMPLETTPAKET</h3>
-                    <p>Haare + Bart + Hot Towel</p>
-                </div>
-                <div class="service-price">40 €</div>
-            </div>
+        <h2 class="section-title">Preisliste</h2>
+        <div class="price-image-container">
+            <a href="preisliste.jpg" target="_blank">
+                <img src="preisliste.jpg" alt="Friseur Rustem Preisliste" class="price-flyer-img">
+            </a>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 10px;">Tippe auf das Bild, um es größer anzuzeigen.</p>
         </div>
     </section>
 
