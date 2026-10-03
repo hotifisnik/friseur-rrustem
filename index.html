@@ -148,16 +148,17 @@
             margin-bottom: 25px;
         }
 
-        .btn-hero {
+        .btn-call {
             background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
             color: #000;
-            padding: 10px 24px;
+            padding: 12px 28px;
             font-weight: 800;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
             border-radius: 50px;
             text-transform: uppercase;
             text-decoration: none;
+            box-shadow: 0 0 15px var(--gold-glow);
         }
 
         /* SECTIONS GENERAL */
@@ -284,61 +285,6 @@
             color: var(--text-muted);
         }
 
-        /* BEREIT FÜR EIN UPGRADE */
-        .upgrade-section {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .upgrade-section h2 {
-            font-size: 1.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 10px;
-        }
-
-        .upgrade-section p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 25px;
-        }
-
-        .btn-upgrade {
-            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
-            color: #000;
-            padding: 16px;
-            font-weight: 800;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            box-shadow: 0 0 20px var(--gold-glow);
-        }
-
-        /* FLOATING MOBILE BOOKING BUTTON */
-        .floating-book-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
-            color: #000;
-            padding: 12px 22px;
-            border-radius: 30px;
-            font-weight: 800;
-            font-size: 0.8rem;
-            text-decoration: none;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-            z-index: 99;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
         /* FOOTER & LEGAL LINKS */
         footer {
             text-align: center;
@@ -388,14 +334,13 @@
         <a href="#gallery" onclick="toggleMenu()">Galerie</a>
         <a href="#contact" onclick="toggleMenu()">Laden & Zeiten</a>
         <a href="news.html">News</a>
-        <a href="https://friseur-rustem.setmore.com/" target="_blank" class="btn-hero" style="margin-top: 10px;">Termin Buchen</a>
     </nav>
 
     <!-- HERO -->
     <div class="hero">
         <h1>DEIN STYLE.<br>DEIN FRISEUR.</h1>
         <p>Präzisions-Haarschnitte & Styling für Damen & Herren in Wehrheim.</p>
-        <a href="https://friseur-rustem.setmore.com/" target="_blank" class="btn-hero">Termin Buchen</a>
+        <a href="tel:+49123456789" class="btn-call">📞 Anrufen & Termin sichern</a>
     </div>
 
     <!-- PREISLISTE ALS BILD -->
@@ -482,18 +427,6 @@
             </div>
         </div>
     </section>
-
-    <!-- BEREIT FÜR EIN UPGRADE -->
-    <div class="upgrade-section">
-        <h2>BEREIT FÜR EIN UPGRADE?</h2>
-        <p>Sichere dir jetzt deinen Termin direkt online.</p>
-        <a href="https://friseur-rustem.setmore.com/" target="_blank" class="btn-upgrade">Jetzt Termin Buchen</a>
-    </div>
-
-    <!-- FLOATING MOBILE BUTTON -->
-    <a href="https://friseur-rustem.setmore.com/" target="_blank" class="floating-book-btn">
-        ✂️ TERMIN BUCHEN
-    </a>
 
     <!-- FOOTER & LEGAL LINKS -->
     <footer>
