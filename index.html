@@ -38,7 +38,7 @@
 
         .logo-tag {
             font-size: 0.85rem;
-            letter-name: 4px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--gold);
             margin-bottom: 0.5rem;
@@ -112,4 +112,73 @@
 
         .cta-container {
             text-align: center;
-            margin: 2
+            margin: 2.5rem 0;
+        }
+
+        .btn-call {
+            display: inline-block;
+            background-color: var(--gold);
+            color: #000;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-call:hover {
+            background-color: var(--gold-light);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-tag">Herren- & Damensalon</div>
+        <h1>Friseur <span>Rustem</span></h1>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Willkommen</h2>
+            <p>Erleben Sie präzise Handwerkskunst, moderne Fades und professionelles Styling in entspannter Atmosphäre. Bei uns stehen Qualität und Ihr persönlicher Look im Mittelpunkt.</p>
+            <p class="team-names">Ihr Team: Rrustem & Qendrim</p>
+        </section>
+
+        <section class="card">
+            <h2>Öffnungszeiten</h2>
+            <ul>
+                <li><span>Montag – Freitag</span> <span>08:30 – 18:30 Uhr</span></li>
+                <li><span>Samstag</span> <span>08:00 – 17:00 Uhr</span></li>
+                <li><span>Sonntag</span> <span>Geschlossen</span></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Kontakt & Standort</h2>
+            <p><strong>Adresse:</strong><br>Wiesenau 30<br>61273 Wehrheim</p>
+            <p style="margin-top: 1rem;"><strong>Telefon:</strong><br>+49 173 3853482</p>
+            
+            <div class="cta-container">
+                <a href="tel:+491733853482" class="btn-call">Jetzt Termin anrufen</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Friseur Rustem &bull; Wiesenau 30, 61273 Wehrheim
+    </footer>
+
+</body>
+</html>
