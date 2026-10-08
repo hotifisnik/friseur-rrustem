@@ -93,3 +93,24 @@
 
         .nav-overlay {
             position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(10, 10, 10, 0.98);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            transition: right 0.4s ease-in-out;
+            z-index: 150;
+        }
+
+        .nav-overlay.active {
+            right: 0;
+        }
+
+        .nav-overlay a {
+            color: var(--text-main);
+            font-size: 1.2rem
