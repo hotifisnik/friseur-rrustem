@@ -382,4 +382,133 @@
         </div>
     </header>
 
-    <nav class="nav-overlay" id="nav
+    <nav class="nav-overlay" id="navMenu">
+        <a href="index.html" onclick="toggleMenu()">Start / Home</a>
+        <a href="#news" onclick="toggleMenu()">Neueröffnung</a>
+        <a href="#services" onclick="toggleMenu()">Preisliste</a>
+        <a href="#team" onclick="toggleMenu()">Das Team</a>
+        <a href="#reviews" onclick="toggleMenu()">Bewertungen</a>
+        <a href="#gallery" onclick="toggleMenu()">Galerie</a>
+        <a href="#contact" onclick="toggleMenu()">Laden & Zeiten</a>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>DEIN STYLE.<br>DEIN FRISEUR.</h1>
+        <p>Präzisions-Haarschnitte & Styling für Damen & Herren in Wehrheim.</p>
+        <a href="tel:+4915731646077" class="btn-call">📞 Anrufen & Termin sichern</a>
+    </div>
+
+    <!-- NEWS / NEUERÖFFNUNG SECTION -->
+    <section id="news">
+        <h2 class="section-title">Aktuelles</h2>
+        <div class="news-banner">
+            <span class="news-badge">Wichtige Ankündigung</span>
+            <h3>Große Neueröffnung in Wehrheim</h3>
+            <p>Wir öffnen offiziell unsere Türen für euch! Kommt vorbei und erlebt frische Styles, präzise Fades und bestes Handwerk.</p>
+            <span class="news-date">📅 Dienstag, 06.10.2026</span>
+        </div>
+    </section>
+
+    <!-- PREISLISTE ALS BILD -->
+    <section id="services">
+        <h2 class="section-title">Preisliste</h2>
+        <div class="price-image-container">
+            <a href="preisliste.JPG" target="_blank">
+                <img src="preisliste.JPG" alt="Friseur Rustem Preisliste" class="price-flyer-img">
+            </a>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 10px;">Tippe auf das Bild, um es größer anzuzeigen.</p>
+        </div>
+    </section>
+
+    <!-- DAS TEAM -->
+    <section id="team">
+        <h2 class="section-title">Das Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <h3>RRUSTEM</h3>
+                <p>Master Barber & Stylist</p>
+            </div>
+            <div class="team-card">
+                <h3>QENDRIM</h3>
+                <p>Master Barber & Stylist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEWERTUNGEN / REVIEWS -->
+    <section id="reviews">
+        <h2 class="section-title">Bewertungen</h2>
+        <div class="team-grid">
+            <div class="team-card" style="text-align: left;">
+                <p style="color: var(--accent-gold); font-size: 1rem; margin-bottom: 5px;">★★★★★</p>
+                <p style="color: #fff; font-size: 0.85rem; font-style: italic;">"Bester Fade in der Stadt! Rrustem und Qendrim wissen genau, was sie tun."</p>
+                <span style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 10px;">– Fisnik H.</span>
+            </div>
+            <div class="team-card" style="text-align: left;">
+                <p style="color: var(--accent-gold); font-size: 1rem; margin-bottom: 5px;">★★★★★</p>
+                <p style="color: #fff; font-size: 0.85rem; font-style: italic;">"Perfekter Service, saubere Konturen und immer gute Stimmung im Laden."</p>
+                <span style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 10px;">– Bashkim P.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="gallery">
+        <h2 class="section-title">Galerie</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Cut 1"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="Cut 2"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=600&q=80" alt="Cut 3"></div>
+        </div>
+    </section>
+
+    <!-- LADEN & ZEITEN -->
+    <section id="contact">
+        <h2 class="section-title">Laden & Zeiten</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>⏰ ÖFFNUNGSZEITEN</h3>
+                <div class="hours-row">
+                    <span>Mo - Fr:</span>
+                    <span>08:30 - 18:30 Uhr</span>
+                </div>
+                <div class="hours-row">
+                    <span>Samstag:</span>
+                    <span>08:00 - 17:00 Uhr</span>
+                </div>
+                <div class="hours-row closed">
+                    <span>Sonntag:</span>
+                    <span>Geschlossen</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h3>📍 STANDORT & KONTAKT</h3>
+                <div class="contact-details">
+                    <p>Wiesenau 30</p>
+                    <p>61273 Wehrheim</p>
+                    <p style="margin-top: 15px;">📞 <span>Tel:</span> <a href="tel:+4915731646077">+49 157 31646077</a></p>
+                    <p>📷 <span>Instagram:</span> <a href="https://www.instagram.com/friseur_rustem" target="_blank">@friseur_rustem</a></p>
+                    <p>🎵 <span>TikTok:</span> <a href="https://www.tiktok.com/@friseur.rustem" target="_blank">@friseur.rustem</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER & LEGAL LINKS -->
+    <footer>
+        <p>&copy; 2026 Friseur Rustem | Damen & Herren</p>
+        <p style="margin-top: 10px;">
+            <a href="impressum.html">Impressum</a> | 
+            <a href="datenschutz.html">Datenschutz</a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
